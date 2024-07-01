@@ -94,7 +94,7 @@ export default class ResponseBody extends React.PureComponent {
       }
 
       // Anything else (CORS)
-    } else if (/json/i.test(contentType)) {
+    } else if (/json/i.test(n) && !/x-ndjson/i.test(n)) {
       // JSON
       let language = null
       let testValueForJson = getKnownSyntaxHighlighterLanguage(content)
